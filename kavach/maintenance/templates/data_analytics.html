@@ -3,54 +3,57 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
- 
-
-  <title>Predictive Maintenance for Public Infrastructure</title>
-  <meta name="description" content="A system that predicts maintenance needs for public infrastructure using advanced algorithms.">
-</head>
   <link rel="stylesheet" type="text/css" href="{% static 'fix.css' %}" />
+  <title>User Complaints</title>
+  <meta name="description" content="A system that displays user complaints for public infrastructure.">
+  <style>
+    .complaint__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .complaint {
+      border: 1px solid #ccc;
+      padding: 20px;
+      cursor: pointer;
+    }
+    .complaints{
+      right: -10px;
+    }
+  </style>
+</head>
 
 <body>
   <nav class="nav__bar">
     <div class="logo">
       <img src="https://i.postimg.cc/x1798YMx/image.png" alt="Predictive Maintenance Logo" style="width: 15%;">
       <span style="color: var(--clr-font); padding-left: 1rem; font-size: 2em;">Kavach</span>
-
     </div>
-
     <ul class="navbar">
-
       <li><a href="#Home">Home</a></li>
       <li><a href="#Features">Features</a></li>
       <li><a href="#About">About</a></li>
       <li><a href="#Contact">Contact</a></li>
     </ul>
     <div id="menu__btn" class="fas fa-bars"></div>
-
   </nav>
-
   <hr />
   <section id="Home">
     <div class="home">
 
       <div class="home__first">
-        <h2>Predictive Maintenance for Public Infrastructure</h2>
+        <h2>Addressing User Complaints on Infrastructure</h2>
         <p>
-          Design a system that predicts maintenance needs for public infrastructure, such as bridges, roads, and public transit systems.
-
+          Explore a platform that collects and addresses user complaints on public infrastructure, ensuring a safer and more efficient environment for everyone.
         </p>
-        <button>Learn More</button>
+   
 
       </div>
 
@@ -58,63 +61,29 @@
     </div>
 
   </section>
-  
-  <section id="Features">
-    <div class="about__top">
-      <h2><span>Features</span> of Our System</h2>
-    </div>
 
-    <div class="service">
-
-      <a href="{% url 'real_time_monitoring' %}" class="service__first" style="cursor: pointer; color: white; text-decoration: none;">
-        <i class="fa-solid fa-chart-line"></i>
-        <h2>Real-time Monitoring</h2>
-        <p>Monitor infrastructure in real-time to detect potential issues before they become critical.</p>
-      </a>
-      <a href="{% url 'automated_alerts' %}" class="service__second" style="cursor: pointer; color: white; text-decoration: none;">
-        <i class="fa-solid fa-cogs"></i>
-        <h2>Automated Alerts</h2>
-        <p>Receive automated alerts for maintenance needs based on predictive analytics.</p>
-      </a>
-      <a href="{% url 'data_analytics' %}" class="service__third" style="cursor: pointer; color: white; text-decoration: none;">
-        <i class="fa-solid fa-database"></i>
-        <h2>Data Analytics</h2>
-        <p>Analyze historical data to improve maintenance schedules and reduce downtime.</p>
-      </a>
-      <a href="{% url 'safety_assurance' %}" class="service__fourth" style="cursor: pointer; color: white; text-decoration: none;">
-        <i class="fa-solid fa-shield-alt"></i>
-        <h2>Safety Assurance</h2>
-        <p>Ensure the safety of public infrastructure through proactive maintenance.</p>
-      </a>
-    </div>
-  </section>
-  
-
-  <section id="About">
-    <div class="about__top">
-      <h2>About <span>Us</span></h2>
-
-    </div>
-    <div class="about">
-      <div class="about__first">
-
-        <img src="https://primathon.in/blog/wp-content/uploads/2024/03/Smart-Cities-AI-Revolutionizing-Urban-Management-and-Sustainability.jpg" alt="Team Image" style="width: 100%;">
-      </div>
-      <div class="about__second">
-
-        <h2>Our Mission</h2>
-
-        <p>Our mission is to revolutionize the maintenance of public infrastructure through advanced predictive analytics and real-time monitoring.</p>
-
-        <button>Read More</button>
+  <section id="Complaints">
+    <div class="complaints">
+      <h2>User Complaints</h2>
+      <div class="complaint__container">
+        <div class="complaint" data-url="report1.html">
+          <h3>Complaint Title 1</h3>
+          <img src="https://via.placeholder.com/150" alt="Complaint Image 1" style="width: 100%;">
+          <p>Description of the complaint goes here. This is a brief description of the issue reported by the user.</p>
+        </div>
+        <div class="complaint" data-url="report2.html">
+          <h3>Complaint Title 2</h3>
+          <img src="https://via.placeholder.com/150" alt="Complaint Image 2" style="width: 100%;">
+          <p>Description of the complaint goes here. This is a brief description of the issue reported by the user.</p>
+        </div>
+        <!-- Add more complaint containers as needed -->
       </div>
     </div>
   </section>
-  
+
   <footer>
     <section id="Contact">
       <div class="bottom">
-
         <div class="bottom__one">
           <h2>Contact Us</h2>
           <ul>
@@ -122,64 +91,65 @@
               <a href="#">
                 <i class="fa-solid fa-phone"></i><span> +123-456-7890</span>
               </a>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-solid fa-envelope"></i><span> contact@predictivemaintenance.com</span>
-            </a>
-          </li>
-          <!-- Additional contact information -->
-        </ul>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i><span> contact@predictivemaintenance.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom__two">
+          <h2>Follow Us</h2>
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-facebook"></i><span> Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-twitter"></i><span> Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin"></i><span> LinkedIn</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom__three">
+          <h2>Our Address</h2>
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-map-marker-alt"></i><span> 123 Main Street, City, Country</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom__four">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Features">Features</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Contact">Contact</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="bottom__two">
-        <h2>Follow Us</h2>
-        <ul>
-          <li>
-            <a href="#">
-              <i class="fa-brands fa-facebook"></i><span> Facebook</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-brands fa-twitter"></i><span> Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-brands fa-linkedin"></i><span> LinkedIn</span>
-            </a>
-          </li>
-          <!-- Additional social media links -->
-        </ul>
-      </div>
-      <div class="bottom__three">
-        <h2>Our Address</h2>
-        <ul>
-          <li>
-            <a href="#">
-              <i class="fa-solid fa-map-marker-alt"></i><span> 123 Main Street, City, Country</span>
-            </a>
-          </li>
-          <!-- Additional address details -->
-        </ul>
-      </div>
-      <div class="bottom__four">
-        <h2>Quick Links</h2>
-        <ul>
-          <li><a href="#Home">Home</a></li>
-          <li><a href="#Features">Features</a></li>
-          <li><a href="#About">About</a></li>
-          <li><a href="#Contact">Contact</a></li>
-          <!-- Additional quick links -->
-        </ul>
-      </div>
-    </div>
-    <p>Developed by Predictive Maintenance Team</p>
-  </section>
-</footer>
+      <p>Developed by Predictive Maintenance Team</p>
+    </section>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.complaint').forEach(item => {
+      item.addEventListener('click', event => {
+        window.location.href = item.getAttribute('data-url');
+      });
+    });
+  </script>
 </body>
 
 </html>
-
-           

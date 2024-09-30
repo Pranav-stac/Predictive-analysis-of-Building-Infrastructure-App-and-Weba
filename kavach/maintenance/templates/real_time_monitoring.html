@@ -1,0 +1,144 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+
+  <title>Predictive Maintenance for Public Infrastructure</title>
+  <meta name="description" content="A system that predicts maintenance needs for public infrastructure using advanced algorithms.">
+</head>
+  <link rel="stylesheet" type="text/css" href="{% static 'fix.css' %}" />
+
+<body>
+  <nav class="nav__bar">
+    <div class="logo">
+      <img src="https://i.postimg.cc/x1798YMx/image.png" alt="Predictive Maintenance Logo" style="width: 15%;">
+      <span style="color: var(--clr-font); padding-left: 1rem; font-size: 2em;">Kavach</span>
+
+    </div>
+
+    <ul class="navbar">
+
+      <li><a href="#Home">Home</a></li>
+      <li><a href="#Contact">Contact</a></li>
+    </ul>
+    <div id="menu__btn" class="fas fa-bars"></div>
+
+  </nav>
+
+  <hr />
+  <section id="Home">
+    <div class="home">
+
+      <div class="home__first">
+        <h2>Monitoring of Public Infrastructure</h2>
+        <p>
+           System for real-time monitoring of public infrastructure, including bridges, roads, and public transit systems, to ensure timely maintenance and prevent failures.
+        </p>
+      </div>
+      <div class="home__upload">
+        <h3>Upload PDF for Analysis</h3>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <input type="file" name="pdf" accept="application/pdf" required>
+          <button type="submit">Upload</button>
+        </form>
+      </div>
+      <div class="home__analysis">
+        <h3>Analysis Results</h3>
+        <div class="chart-placeholder">
+          <p>Pie Chart Placeholder</p>
+          <!-- Placeholder for pie chart -->
+        </div>
+        <div class="graph-placeholder">
+          <p>Graph Placeholder</p>
+          <!-- Placeholder for graph -->
+        </div>
+      </div>
+    </div>
+
+  </section>
+  
+  
+  
+  <footer>
+    <section id="Contact">
+      <div class="bottom">
+
+        <div class="bottom__one">
+          <h2>Contact Us</h2>
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-phone"></i><span> +123-456-7890</span>
+              </a>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-envelope"></i><span> contact@predictivemaintenance.com</span>
+            </a>
+          </li>
+          <!-- Additional contact information -->
+        </ul>
+      </div>
+      <div class="bottom__two">
+        <h2>Follow Us</h2>
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-facebook"></i><span> Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-twitter"></i><span> Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-linkedin"></i><span> LinkedIn</span>
+            </a>
+          </li>
+          <!-- Additional social media links -->
+        </ul>
+      </div>
+      <div class="bottom__three">
+        <h2>Our Address</h2>
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-map-marker-alt"></i><span> 123 Main Street, City, Country</span>
+            </a>
+          </li>
+          <!-- Additional address details -->
+        </ul>
+      </div>
+      <div class="bottom__four">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#Features">Features</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <!-- Additional quick links -->
+        </ul>
+      </div>
+    </div>
+    <p>Developed by Predictive Maintenance Team</p>
+  </section>
+</footer>
+</body>
+
+</html>

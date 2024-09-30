@@ -1,0 +1,6 @@
+Building,Inspection_Date,Roof_Status,Roof_Issue,Siding_Status,Siding_Issue,Windows_Status,Windows_Issue,HVAC_Status,HVAC_Issue,Plumbing_Status,Plumbing_Issue,Elevators_Status,Elevators_Issue,Lighting_Status,Lighting_Issue,Landscaping_Status,Landscaping_Issue,Emergency Exits_Status,Emergency Exits_Issue
+Building J,2021-01-14T00:00:00.000,1,4,5,5,2,0,4,0,2,5,2,0,4,2,2,4,4,4
+Building J,2026-12-18T00:00:00.000,3,4,4,5,2,1,4,4,5,5,2,3,3,5,4,2,1,2
+Building J,2023-08-26T00:00:00.000,5,3,1,1,2,0,3,5,2,2,3,4,2,5,1,3,3,1
+Building J,2024-11-01T00:00:00.000,4,4,5,2,3,5,5,4,3,0,3,5,1,1,1,4,4,1
+Building J,2025-06-29T00:00:00.000,1,5,5,4,5,2,3,3,1,3,2,5,1,3,2,5,4,2

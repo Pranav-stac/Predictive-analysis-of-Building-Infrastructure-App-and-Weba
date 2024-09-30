@@ -63,20 +63,10 @@
   </section>
 
   <section id="Complaints">
-    <div class="complaints">
+    <div class="about__top">
       <h2>User Complaints</h2>
-      <div class="complaint__container">
-        <div class="complaint" data-url="report1.html">
-          <h3>Complaint Title 1</h3>
-          <img src="https://via.placeholder.com/150" alt="Complaint Image 1" style="width: 100%;">
-          <p>Description of the complaint goes here. This is a brief description of the issue reported by the user.</p>
-        </div>
-        <div class="complaint" data-url="report2.html">
-          <h3>Complaint Title 2</h3>
-          <img src="https://via.placeholder.com/150" alt="Complaint Image 2" style="width: 100%;">
-          <p>Description of the complaint goes here. This is a brief description of the issue reported by the user.</p>
-        </div>
-        <!-- Add more complaint containers as needed -->
+      <div class="complaint__container" id="complaintContainer">
+        <!-- Complaints will be dynamically inserted here -->
       </div>
     </div>
   </section>
@@ -144,10 +134,25 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.complaint').forEach(item => {
-      item.addEventListener('click', event => {
-        window.location.href = item.getAttribute('data-url');
-      });
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('/api/complaints/')
+        .then(response => response.json())
+        .then(data => {
+          const container = document.getElementById('complaintContainer');
+          data.forEach(complaint => {
+            const complaintDiv = document.createElement('div');
+            complaintDiv.className = 'complaint';
+            complaintDiv.innerHTML = `
+              <h3>${complaint.title}</h3>
+              <img src="${complaint.image}" alt="${complaint.title}" style="width: 100%;">
+              <p>${complaint.description}</p>
+            `;
+            complaintDiv.addEventListener('click', () => {
+              window.location.href = `/complaint/${complaint.id}/`;
+            });
+            container.appendChild(complaintDiv);
+          });
+        });
     });
   </script>
 </body>

@@ -1,0 +1,125 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Added body font style */
+        }
+        .container {
+            width: 80%; /* Added container width */
+            margin: 0 auto; /* Centered container */
+        }
+        .header {
+            text-align: center; /* Centered header text */
+            margin-top: 150px; /* Added margin for spacing */
+        }
+        .charts {
+            display: flex; /* Flexbox for charts layout */
+            justify-content: space-between; /* Space between charts */
+            margin-top: 150px; /* Added margin for spacing */
+        }
+        .chart-container {
+            width: 45%; /* Chart container width */
+        }
+        .data-section {
+            margin-top: 30px; /* Spacing for data sections */
+        }
+        .data-section h3 {
+            margin-bottom: 10px; /* Spacing for section headers */
+        }
+        .line-chart-container {
+            width: 28%; /* Reduced width by 30% from 40% to 28% */
+            margin-right: 220px; /* Space between written content and line graph */
+        }
+    </style>
+
+  <title>Predictive Maintenance for Public Infrastructure</title>
+  <meta name="description" content="A system that predicts maintenance needs for public infrastructure using advanced algorithms.">
+</head>
+  <link rel="stylesheet" type="text/css" href="{% static 'fix.css' %}" />
+
+<body>
+  <nav class="nav__bar">
+    <div class="logo">
+      <img src="https://i.postimg.cc/x1798YMx/image.png" alt="Predictive Maintenance Logo" style="width: 15%;">
+      <span style="color: var(--clr-font); padding-left: 1rem; font-size: 2em;">Kavach</span>
+
+    </div>
+
+    <ul class="navbar">
+
+      <li><a href="#Home">Home</a></li>
+      <li><a href="#Features">Features</a></li>
+      <li><a href="#About">About</a></li>
+      <li><a href="#Contact">Contact</a></li>
+    </ul>
+    <div id="menu__btn" class="fas fa-bars"></div>
+
+  </nav>
+
+  <hr />
+  <section id="Home">
+    <div class="home">
+        <div class="container">
+            <div class="header">
+                <h1>Infrastructure Maintenance Report</h1>
+                <p><strong>Next Maintenance Date:</strong> {{ next_maintenance_date }}</p>
+            </div>
+        
+            <div class="data-section" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0;"> <!-- Removed margin-bottom -->
+                <div style="width: 60%;"> <!-- Adjust width as needed -->
+                    <h3>Repairs Needed:</h3>
+                    <ul>
+                        {% for repair in repairs_needed %}
+                            <li>{{ repair }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="line-chart-container" style="width: 35%;" > <!-- Adjust width as needed -->
+                    <h3>Maintenance Trend (Line Graph)</h3>
+                    <img src="data:image/png;base64,{{ line_chart_base64 }}" alt="Line Graph">
+                </div>
+            </div>
+        
+            <div class="data-section" style="margin-top: -270px;"> <!-- Added margin-top for spacing -->
+                <h3>Fine Parameters:</h3>
+                <ul>
+                    {% for param in fine_parameters %}
+                        <li>{{ param }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        
+            <div class="charts" style="margin-top: 40px; display: flex;"> <!-- Added display: flex for alignment -->
+                <div class="chart-container" style="margin-right: 300px;"> <!-- Increased margin-right for more space -->
+                    <h3>Issues Needing Attention (Bar Chart)</h3>
+                    <img src="data:image/png;base64,{{ bar_chart_base64 }}" alt="Bar Chart">
+                </div>
+                <div class="chart-container"> <!-- No margin-top to keep it aligned -->
+                    <h3>Condition of Parameters (Pie Chart)</h3>
+                    <img src="data:image/png;base64,{{ pie_chart_base64 }}" alt="Pie Chart">
+                </div>
+            </div>
+        </div>
+        
+
+    
+    </div>
+  </section>
+  
+</body>
+
+</html>

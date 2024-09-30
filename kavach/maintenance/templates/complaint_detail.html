@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="{% static 'fix.css' %}" />
+  <title>{{ complaint.title }}</title>
+  <meta name="description" content="A system that predicts maintenance needs for public infrastructure using advanced algorithms.">
+</head>
+
+<body>
+  <nav class="nav__bar">
+    <div class="logo">
+      <img src="https://i.postimg.cc/x1798YMx/image.png" alt="Predictive Maintenance Logo" style="width: 15%;">
+      <span style="color: var(--clr-font); padding-left: 1rem; font-size: 2em;">Kavach</span>
+    </div>
+    <ul class="navbar">
+      <li><a href="#Home">Home</a></li>
+      <li><a href="#Features">Features</a></li>
+      <li><a href="#About">About</a></li>
+      <li><a href="#Contact">Contact</a></li>
+    </ul>
+    <div id="menu__btn" class="fas fa-bars"></div>
+  </nav>
+  <hr />
+  <section id="Home">
+    <div class="home">
+      <div class="home__first">
+        <h2>{{ complaint.title }}</h2>
+        <div class="image-container">
+          <img src="{{ complaint.image.url }}" alt="{{ complaint.title }}" style="width: 50%; margin: 10px;">
+        </div>
+        <p>{{ complaint.description }}</p>
+        <h3>Analysis Result:</h3>
+        <div class="analysis-result">
+          <p>{{ analysis_result }}</p>
+        </div>
+        <a href="{% url 'index' %}">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Include other sections like Features, About, and Contact if needed -->
+
+</body>
+
+</html>
